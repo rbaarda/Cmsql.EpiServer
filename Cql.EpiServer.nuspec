@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Cql.EpiServer</id>
+    <version>$version$</version>
+    <title>CQL EPiServer</title>
+    <authors>Robert Baarda</authors>
+    <owners>Robert Baarda</owners>
+    <!-- <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl> -->
+    <!-- <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl> -->
+    <!-- <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl> -->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<summary>Content Query Language (CQL), a DSL for querying tree structured data.</summary>
+    <description>This package contains the EPiServer CQL query runner implementation.</description>
+    <releaseNotes>Initial alpha release (Proof of concept).</releaseNotes>
+    <copyright>Copyright (c) 2017 Robert Baarda</copyright>
+    <tags>cql content lexer parser dsl query tree cms episerver</tags>
+    <dependencies>
+        <dependency id="Cql" version="1.0.0-alpha1"/>
+        <dependency id="EPiServer.CMS.Core" version="[10.0.0,11.0.0)"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Cql.EpiServer\bin\$configuration$\Cql.EpiServer.dll" target="lib\net461"/>
+  </files>
+</package>
