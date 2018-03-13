@@ -63,10 +63,10 @@ namespace Cmsql.EpiServer
                 }
             }
 
-            IEnumerable<ICmsqlQueryResult> pageDataCqlQueryResults =
+            IEnumerable<ICmsqlQueryResult> pageDataCmsqlQueryResults =
                 result.Select(p => new PageDataCmsqlQueryResult(p)).ToList();
 
-            return new CmsqlQueryExecutionResult(pageDataCqlQueryResults, errors);
+            return new CmsqlQueryExecutionResult(pageDataCmsqlQueryResults, errors);
         }
 
         private PageReference GetStartSearchFromNode(CmsqlQueryStartNode startNode)
