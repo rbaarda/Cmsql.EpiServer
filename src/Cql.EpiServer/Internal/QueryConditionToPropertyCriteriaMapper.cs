@@ -4,7 +4,7 @@ using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
 
-namespace Cql.EpiServer.Internal
+namespace Cmsql.EpiServer.Internal
 {
     internal class QueryConditionToPropertyCriteriaMapper
     {

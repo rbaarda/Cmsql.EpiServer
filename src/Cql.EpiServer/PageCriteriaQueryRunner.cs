@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Cql.EpiServer.Internal;
+using Cmsql.EpiServer.Internal;
 using Cql.Query;
 using Cql.Query.Execution;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 
-namespace Cql.EpiServer
+namespace Cmsql.EpiServer
 {
     public class PageCriteriaQueryRunner : ICqlQueryRunner
     {
@@ -36,8 +36,8 @@ namespace Cql.EpiServer
                     continue;
                 }
 
-                CqlExpressionParser expressionParser = new CqlExpressionParser();
-                CqlExpressionVisitorContext visitorContext = expressionParser.Parse(contentType, query.Criteria);
+                CmsqlExpressionParser expressionParser = new CmsqlExpressionParser();
+                CmsqlExpressionVisitorContext visitorContext = expressionParser.Parse(contentType, query.Criteria);
                 if (visitorContext.Errors.Any())
                 {
                     errors.AddRange(visitorContext.Errors);

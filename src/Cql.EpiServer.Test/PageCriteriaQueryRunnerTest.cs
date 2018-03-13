@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cql.EpiServer.Test
+﻿namespace Cmsql.EpiServer.Test
 {
     public class PageCriteriaQueryRunnerTest
     {

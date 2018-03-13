@@ -1,5 +1,4 @@
 ﻿using System;
-using Cql.EpiServer.Internal;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using FluentAssertions;

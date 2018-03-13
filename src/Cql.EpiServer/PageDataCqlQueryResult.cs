@@ -1,7 +1,7 @@
 ﻿using Cql.Query;
 using EPiServer.Core;
 
-namespace Cql.EpiServer
+namespace Cmsql.EpiServer
 {
     public class PageDataCqlQueryResult : ICqlQueryResult
     {

@@ -2,17 +2,17 @@
 using Cql.Query.Execution;
 using EPiServer;
 
-namespace Cql.EpiServer.Internal
+namespace Cmsql.EpiServer.Internal
 {
-    internal class CqlExpressionVisitor : ICqlQueryExpressionVisitor
+    internal class CmsqlExpressionVisitor : ICqlQueryExpressionVisitor
     {
         private readonly QueryConditionToPropertyCriteriaMapper _conditionToCriteriaMapper;
 
-        protected readonly CqlExpressionVisitorContext Context;
+        protected readonly CmsqlExpressionVisitorContext Context;
 
-        internal CqlExpressionVisitor(
+        internal CmsqlExpressionVisitor(
             QueryConditionToPropertyCriteriaMapper conditionToCriteriaMapper,
-            CqlExpressionVisitorContext context)
+            CmsqlExpressionVisitorContext context)
         {
             _conditionToCriteriaMapper = conditionToCriteriaMapper;
             Context = context;
@@ -38,9 +38,9 @@ namespace Cql.EpiServer.Internal
 
         public virtual void VisitQueryExpression(CqlQueryBinaryExpression binaryExpression)
         {
-            CqlExpressionVisitor visitor = binaryExpression.Operator == ConditionalOperator.Or
-                ? new CqlBinaryOrExpressionVisitor(_conditionToCriteriaMapper, Context)
-                : new CqlExpressionVisitor(_conditionToCriteriaMapper, Context);
+            CmsqlExpressionVisitor visitor = binaryExpression.Operator == ConditionalOperator.Or
+                ? new CmsqlBinaryOrExpressionVisitor(_conditionToCriteriaMapper, Context)
+                : new CmsqlExpressionVisitor(_conditionToCriteriaMapper, Context);
 
             binaryExpression.LeftExpression.Accept(visitor);
             binaryExpression.RightExpression.Accept(visitor);

@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
-using Cql.EpiServer.Internal;
 using Cql.Query;
 using EPiServer;
 using EPiServer.DataAbstraction;
 using FluentAssertions;
 using Xunit;
 
-namespace Cql.EpiServer.Test.Internal
+namespace Cmsql.EpiServer.Test.Internal
 {
-    public class CqlBinaryOrExpressionVisitorTest
+    public class CmsqlBinaryOrExpressionVisitorTest
     {
         [Fact]
         public void Test_when_visit_query_condition_push_new_criteria_collection()

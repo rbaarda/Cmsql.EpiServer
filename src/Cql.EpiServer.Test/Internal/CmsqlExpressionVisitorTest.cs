@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Cql.EpiServer.Internal;
 using Cql.Query;
 using Cql.Query.Execution;
 using EPiServer;
@@ -9,9 +8,9 @@ using EPiServer.Filters;
 using FluentAssertions;
 using Xunit;
 
-namespace Cql.EpiServer.Test.Internal
+namespace Cmsql.EpiServer.Test.Internal
 {
-    public class CqlExpressionVisitorTest
+    public class CmsqlExpressionVisitorTest
     {
         [Fact]
         public void Test_can_map_query_condition_to_property_criteria()

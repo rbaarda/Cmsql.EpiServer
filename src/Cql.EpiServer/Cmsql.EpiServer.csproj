@@ -7,8 +7,8 @@
     <ProjectGuid>{C97DA5C5-3BC7-4B9E-8657-96ECB21C0459}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cql.EpiServer</RootNamespace>
-    <AssemblyName>Cql.EpiServer</AssemblyName>
+    <RootNamespace>Cmsql.EpiServer</RootNamespace>
+    <AssemblyName>Cmsql.EpiServer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -132,13 +132,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Internal\CqlBinaryOrExpressionVisitor.cs" />
-    <Compile Include="Internal\CqlExpressionParser.cs" />
-    <Compile Include="Internal\CqlExpressionVisitorContext.cs" />
+    <Compile Include="Internal\CmsqlBinaryOrExpressionVisitor.cs" />
+    <Compile Include="Internal\CmsqlExpressionParser.cs" />
+    <Compile Include="Internal\CmsqlExpressionVisitorContext.cs" />
     <Compile Include="Internal\PropertyDataTypeResolver.cs" />
     <Compile Include="Internal\QueryConditionToPropertyCriteriaMapper.cs" />
     <Compile Include="PageCriteriaQueryRunner.cs" />
-    <Compile Include="Internal\CqlExpressionVisitor.cs" />
+    <Compile Include="Internal\CmsqlExpressionVisitor.cs" />
     <Compile Include="PageDataCqlQueryResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

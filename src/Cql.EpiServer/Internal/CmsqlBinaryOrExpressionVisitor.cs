@@ -1,12 +1,12 @@
 ﻿using Cql.Query;
 
-namespace Cql.EpiServer.Internal
+namespace Cmsql.EpiServer.Internal
 {
-    internal class CqlBinaryOrExpressionVisitor : CqlExpressionVisitor
+    internal class CmsqlBinaryOrExpressionVisitor : CmsqlExpressionVisitor
     {
-        internal CqlBinaryOrExpressionVisitor(
+        internal CmsqlBinaryOrExpressionVisitor(
             QueryConditionToPropertyCriteriaMapper conditionToCriteriaMapper,
-            CqlExpressionVisitorContext context)
+            CmsqlExpressionVisitorContext context)
             : base(conditionToCriteriaMapper, context)
         {
         }

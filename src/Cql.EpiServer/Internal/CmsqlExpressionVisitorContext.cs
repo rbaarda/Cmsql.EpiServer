@@ -4,15 +4,15 @@ using System.Linq;
 using Cql.Query.Execution;
 using EPiServer;
 
-namespace Cql.EpiServer.Internal
+namespace Cmsql.EpiServer.Internal
 {
-    internal class CqlExpressionVisitorContext
+    internal class CmsqlExpressionVisitorContext
     {
         private readonly Stack<PropertyCriteriaCollection> _propertyCriteriaCollectionStack;
 
         internal IList<CqlQueryExecutionError> Errors { get; }
 
-        internal CqlExpressionVisitorContext()
+        internal CmsqlExpressionVisitorContext()
         {
             _propertyCriteriaCollectionStack = new Stack<PropertyCriteriaCollection>();
 

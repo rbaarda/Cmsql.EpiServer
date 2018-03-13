@@ -8,8 +8,8 @@
     <ProjectGuid>{5B55CA42-C514-4871-A6C3-551952B78CAF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cql.EpiServer.Test</RootNamespace>
-    <AssemblyName>Cql.EpiServer.Test</AssemblyName>
+    <RootNamespace>Cmsql.EpiServer.Test</RootNamespace>
+    <AssemblyName>Cmsql.EpiServer.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -148,9 +148,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Internal\CqlBinaryOrExpressionVisitorTest.cs" />
-    <Compile Include="Internal\CqlExpressionVisitorContextTest.cs" />
-    <Compile Include="Internal\CqlExpressionVisitorTest.cs" />
+    <Compile Include="Internal\CmsqlBinaryOrExpressionVisitorTest.cs" />
+    <Compile Include="Internal\CmsqlExpressionVisitorContextTest.cs" />
+    <Compile Include="Internal\CmsqlExpressionVisitorTest.cs" />
     <Compile Include="Internal\PropertyDataTypeResolverTest.cs" />
     <Compile Include="Internal\QueryConditionToPropertyCriteriaMapperTest.cs" />
     <Compile Include="PageCriteriaQueryRunnerTest.cs" />
@@ -166,9 +166,9 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cql.EpiServer\Cql.EpiServer.csproj">
+    <ProjectReference Include="..\Cql.EpiServer\Cmsql.EpiServer.csproj">
       <Project>{c97da5c5-3bc7-4b9e-8657-96ecb21c0459}</Project>
-      <Name>Cql.EpiServer</Name>
+      <Name>Cmsql.EpiServer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

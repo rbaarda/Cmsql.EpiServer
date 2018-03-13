@@ -5,7 +5,7 @@ using System.Linq;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 
-namespace Cql.EpiServer.Internal
+namespace Cmsql.EpiServer.Internal
 {
     internal class PropertyDataTypeResolver
     {

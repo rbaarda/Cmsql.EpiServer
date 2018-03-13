@@ -1,5 +1,4 @@
 ﻿using System;
-using Cql.EpiServer.Internal;
 using Cql.Query;
 using EPiServer;
 using EPiServer.Core;

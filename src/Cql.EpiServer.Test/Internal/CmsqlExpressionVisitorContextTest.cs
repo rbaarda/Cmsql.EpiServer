@@ -1,18 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Cql.EpiServer.Internal;
 using EPiServer;
 using FluentAssertions;
 using Xunit;
 
-namespace Cql.EpiServer.Test.Internal
+namespace Cmsql.EpiServer.Test.Internal
 {
-    public class CqlExpressionVisitorContextTest
+    public class CmsqlExpressionVisitorContextTest
     {
         [Fact]
         public void Test_can_add_criteria_when_no_criteria_collection_has_been_pushed_yet()
         {
-            CqlExpressionVisitorContext context = new CqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
 
             context.AddPropertyCriteria(new PropertyCriteria());
 
@@ -24,7 +23,7 @@ namespace Cql.EpiServer.Test.Internal
         [Fact]
         public void Test_can_add_criteria_when_criteria_collection_has_been_pushed()
         {
-            CqlExpressionVisitorContext context = new CqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
             
             context.AddPropertyCriteria(new PropertyCriteria());
 

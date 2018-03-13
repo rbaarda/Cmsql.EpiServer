@@ -1,23 +1,23 @@
 ﻿using Cql.Query;
 using EPiServer.DataAbstraction;
 
-namespace Cql.EpiServer.Internal
+namespace Cmsql.EpiServer.Internal
 {
-    internal class CqlExpressionParser
+    internal class CmsqlExpressionParser
     {
-        public CqlExpressionVisitorContext Parse(
+        public CmsqlExpressionVisitorContext Parse(
             ContentType contentType,
             ICqlQueryExpression expression)
         {
-            CqlExpressionVisitorContext context = new CqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
 
             if (contentType == null || expression == null)
             {
                 return context;
             }
             
-            CqlExpressionVisitor visitor =
-                new CqlExpressionVisitor(
+            CmsqlExpressionVisitor visitor =
+                new CmsqlExpressionVisitor(
                     new QueryConditionToPropertyCriteriaMapper(
                         new PropertyDataTypeResolver(contentType)), context);
 
