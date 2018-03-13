@@ -1,4 +1,4 @@
-﻿using Cql.Query;
+﻿using Cmsql.Query;
 
 namespace Cmsql.EpiServer.Internal
 {
@@ -11,14 +11,14 @@ namespace Cmsql.EpiServer.Internal
         {
         }
 
-        public override void VisitQueryCondition(CqlQueryCondition condition)
+        public override void VisitQueryCondition(CmsqlQueryCondition condition)
         {
             Context.PushNewPropertyCriteriaCollection();
 
             base.VisitQueryCondition(condition);
         }
 
-        public override void VisitQueryExpression(CqlQueryBinaryExpression binaryExpression)
+        public override void VisitQueryExpression(CmsqlQueryBinaryExpression binaryExpression)
         {
             if (binaryExpression.Operator == ConditionalOperator.And)
             {

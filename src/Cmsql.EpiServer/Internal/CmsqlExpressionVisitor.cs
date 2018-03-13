@@ -1,10 +1,10 @@
-﻿using Cql.Query;
-using Cql.Query.Execution;
+﻿using Cmsql.Query;
+using Cmsql.Query.Execution;
 using EPiServer;
 
 namespace Cmsql.EpiServer.Internal
 {
-    internal class CmsqlExpressionVisitor : ICqlQueryExpressionVisitor
+    internal class CmsqlExpressionVisitor : ICmsqlQueryExpressionVisitor
     {
         private readonly QueryConditionToPropertyCriteriaMapper _conditionToCriteriaMapper;
 
@@ -18,11 +18,11 @@ namespace Cmsql.EpiServer.Internal
             Context = context;
         }
 
-        public virtual void VisitQueryCondition(CqlQueryCondition condition)
+        public virtual void VisitQueryCondition(CmsqlQueryCondition condition)
         {
             if (condition == null)
             {
-                Context.Errors.Add(new CqlQueryExecutionError("Could not process malformed query condition."));
+                Context.Errors.Add(new CmsqlQueryExecutionError("Could not process malformed query condition."));
                 return;
             }
 
@@ -32,11 +32,11 @@ namespace Cmsql.EpiServer.Internal
             }
             else
             {
-                Context.Errors.Add(new CqlQueryExecutionError($"Could not find property '{condition.Identifier}'"));
+                Context.Errors.Add(new CmsqlQueryExecutionError($"Could not find property '{condition.Identifier}'"));
             }
         }
 
-        public virtual void VisitQueryExpression(CqlQueryBinaryExpression binaryExpression)
+        public virtual void VisitQueryExpression(CmsqlQueryBinaryExpression binaryExpression)
         {
             CmsqlExpressionVisitor visitor = binaryExpression.Operator == ConditionalOperator.Or
                 ? new CmsqlBinaryOrExpressionVisitor(_conditionToCriteriaMapper, Context)

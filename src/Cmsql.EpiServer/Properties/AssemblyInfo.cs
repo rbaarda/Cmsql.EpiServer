@@ -6,15 +6,15 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Cql.Query.EpiServer")]
-[assembly: AssemblyDescription("CQL EPiServer Query Runner")]
+[assembly: AssemblyTitle("Cmsql.EpiServer")]
+[assembly: AssemblyDescription("CMSQL EpiServer implementation")]
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
 #else
 [assembly: AssemblyConfiguration("Release")]
 #endif
 [assembly: AssemblyCompany("Robert Baarda")]
-[assembly: AssemblyProduct("CQL EPiServer Query Runner")]
+[assembly: AssemblyProduct("CMSQL EPiServer")]
 [assembly: AssemblyCopyright("Copyright © 2018 Robert Baarda")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -43,4 +43,4 @@ using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
 
-[assembly: InternalsVisibleTo("Cql.EpiServer.Test")]
+[assembly: InternalsVisibleTo("Cmsql.EpiServer.Test")]

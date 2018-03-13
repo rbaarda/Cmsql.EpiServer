@@ -1,4 +1,4 @@
-﻿using Cql.Query;
+﻿using Cmsql.Query;
 using EPiServer.DataAbstraction;
 
 namespace Cmsql.EpiServer.Internal
@@ -7,7 +7,7 @@ namespace Cmsql.EpiServer.Internal
     {
         public CmsqlExpressionVisitorContext Parse(
             ContentType contentType,
-            ICqlQueryExpression expression)
+            ICmsqlQueryExpression expression)
         {
             CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
 

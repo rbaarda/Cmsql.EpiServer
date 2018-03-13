@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Cmsql.EpiServer.Internal;
 using EPiServer;
 using FluentAssertions;
 using Xunit;

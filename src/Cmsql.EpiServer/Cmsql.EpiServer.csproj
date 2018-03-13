@@ -40,11 +40,11 @@
     <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Cql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cql.1.0.0-alpha1\lib\net461\Cql.dll</HintPath>
+    <Reference Include="Cmsql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cmsql.1.0.0-alpha1\lib\net461\Cmsql.dll</HintPath>
     </Reference>
-    <Reference Include="Cql.Grammar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Cql.1.0.0-alpha1\lib\net461\Cql.Grammar.dll</HintPath>
+    <Reference Include="Cmsql.Grammar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cmsql.1.0.0-alpha1\lib\net461\Cmsql.Grammar.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer, Version=10.0.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.CMS.Core.10.0.1\lib\net45\EPiServer.dll</HintPath>
@@ -139,7 +139,7 @@
     <Compile Include="Internal\QueryConditionToPropertyCriteriaMapper.cs" />
     <Compile Include="PageCriteriaQueryRunner.cs" />
     <Compile Include="Internal\CmsqlExpressionVisitor.cs" />
-    <Compile Include="PageDataCqlQueryResult.cs" />
+    <Compile Include="PageDataCmsqlQueryResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

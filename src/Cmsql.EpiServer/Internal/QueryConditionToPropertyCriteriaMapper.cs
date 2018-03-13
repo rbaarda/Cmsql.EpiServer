@@ -1,5 +1,5 @@
 ﻿using System;
-using Cql.Query;
+using Cmsql.Query;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
@@ -15,7 +15,7 @@ namespace Cmsql.EpiServer.Internal
             _propertyDataTypeResolver = propertyDataTypeResolver;
         }
 
-        internal bool TryMap(CqlQueryCondition condition, out PropertyCriteria criteria)
+        internal bool TryMap(CmsqlQueryCondition condition, out PropertyCriteria criteria)
         {
             criteria = null;
 

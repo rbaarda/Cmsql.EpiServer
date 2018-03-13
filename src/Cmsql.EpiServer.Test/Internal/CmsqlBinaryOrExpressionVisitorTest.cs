@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using Cql.Query;
+using Cmsql.EpiServer.Internal;
+using Cmsql.Query;
 using EPiServer;
 using EPiServer.DataAbstraction;
 using FluentAssertions;
@@ -13,22 +14,22 @@ namespace Cmsql.EpiServer.Test.Internal
         public void Test_when_visit_query_condition_push_new_criteria_collection()
         {
             // Arrange
-            CqlQueryCondition condition = new CqlQueryCondition
+            CmsqlQueryCondition condition = new CmsqlQueryCondition
             {
                 Identifier = "PageName",
                 Operator = EqualityOperator.GreaterThan,
                 Value = "5"
             };
 
-            CqlExpressionVisitorContext context = new CqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
 
-            CqlExpressionVisitor cqlExpressionVisitor =
-                new CqlBinaryOrExpressionVisitor(
+            CmsqlExpressionVisitor cmsqlExpressionVisitor =
+                new CmsqlBinaryOrExpressionVisitor(
                     new QueryConditionToPropertyCriteriaMapper(
                         new PropertyDataTypeResolver(new ContentType())), context);
 
             // Act
-            cqlExpressionVisitor.VisitQueryCondition(condition);
+            cmsqlExpressionVisitor.VisitQueryCondition(condition);
 
             IEnumerable<PropertyCriteriaCollection> propertyCriteriaCollection = context.GetCriteria();
 
@@ -40,16 +41,16 @@ namespace Cmsql.EpiServer.Test.Internal
         public void Test_when_orexpression_visitor_visits_andexpression_with_conditions_push_one_new_criteria_collection()
         {
             // Arrange
-            CqlQueryBinaryExpression expression = new CqlQueryBinaryExpression
+            CmsqlQueryBinaryExpression expression = new CmsqlQueryBinaryExpression
             {
                 Operator = ConditionalOperator.And,
-                LeftExpression = new CqlQueryCondition
+                LeftExpression = new CmsqlQueryCondition
                 {
                     Identifier = "PageName",
                     Operator = EqualityOperator.GreaterThan,
                     Value = "5"
                 },
-                RightExpression = new CqlQueryCondition
+                RightExpression = new CmsqlQueryCondition
                 {
                     Identifier = "PageName",
                     Operator = EqualityOperator.GreaterThan,
@@ -57,15 +58,15 @@ namespace Cmsql.EpiServer.Test.Internal
                 }
             };
 
-            CqlExpressionVisitorContext context = new CqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
 
-            CqlExpressionVisitor cqlExpressionVisitor =
-                new CqlBinaryOrExpressionVisitor(
+            CmsqlExpressionVisitor cmsqlExpressionVisitor =
+                new CmsqlBinaryOrExpressionVisitor(
                     new QueryConditionToPropertyCriteriaMapper(
                         new PropertyDataTypeResolver(new ContentType())), context);
 
             // Act
-            cqlExpressionVisitor.VisitQueryExpression(expression);
+            cmsqlExpressionVisitor.VisitQueryExpression(expression);
 
             IEnumerable<PropertyCriteriaCollection> propertyCriteriaCollection = context.GetCriteria();
 
@@ -77,16 +78,16 @@ namespace Cmsql.EpiServer.Test.Internal
         public void Test_when_orexpression_visitor_visits_orexpression_push_criteria_collection_for_every_condition()
         {
             // Arrange
-            CqlQueryBinaryExpression expression = new CqlQueryBinaryExpression
+            CmsqlQueryBinaryExpression expression = new CmsqlQueryBinaryExpression
             {
                 Operator = ConditionalOperator.Or,
-                LeftExpression = new CqlQueryCondition
+                LeftExpression = new CmsqlQueryCondition
                 {
                     Identifier = "PageName",
                     Operator = EqualityOperator.GreaterThan,
                     Value = "5"
                 },
-                RightExpression = new CqlQueryCondition
+                RightExpression = new CmsqlQueryCondition
                 {
                     Identifier = "PageName",
                     Operator = EqualityOperator.GreaterThan,
@@ -94,15 +95,15 @@ namespace Cmsql.EpiServer.Test.Internal
                 }
             };
 
-            CqlExpressionVisitorContext context = new CqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
 
-            CqlExpressionVisitor cqlExpressionVisitor =
-                new CqlBinaryOrExpressionVisitor(
+            CmsqlExpressionVisitor cmsqlExpressionVisitor =
+                new CmsqlBinaryOrExpressionVisitor(
                     new QueryConditionToPropertyCriteriaMapper(
                         new PropertyDataTypeResolver(new ContentType())), context);
 
             // Act
-            cqlExpressionVisitor.VisitQueryExpression(expression);
+            cmsqlExpressionVisitor.VisitQueryExpression(expression);
 
             IEnumerable<PropertyCriteriaCollection> propertyCriteriaCollection = context.GetCriteria();
 

@@ -1,5 +1,6 @@
 ﻿using System;
-using Cql.Query;
+using Cmsql.EpiServer.Internal;
+using Cmsql.Query;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
@@ -7,7 +8,7 @@ using EPiServer.Filters;
 using FluentAssertions;
 using Xunit;
 
-namespace Cql.EpiServer.Test.Internal
+namespace Cmsql.EpiServer.Test.Internal
 {
     public class QueryConditionToPropertyCriteriaMapperTest
     {
@@ -30,7 +31,7 @@ namespace Cql.EpiServer.Test.Internal
                 }
             };
 
-            CqlQueryCondition condition = new CqlQueryCondition
+            CmsqlQueryCondition condition = new CmsqlQueryCondition
             {
                 Identifier = "FooBar",
                 Operator = EqualityOperator.GreaterThan,
@@ -55,7 +56,7 @@ namespace Cql.EpiServer.Test.Internal
         public void Test_can_map_query_condition_with_meta_data_property_to_property_criteria()
         {
             // Arrange
-            CqlQueryCondition condition = new CqlQueryCondition
+            CmsqlQueryCondition condition = new CmsqlQueryCondition
             {
                 Identifier = MetaDataProperties.PageName,
                 Operator = EqualityOperator.GreaterThan,
@@ -95,7 +96,7 @@ namespace Cql.EpiServer.Test.Internal
         public void Test_when_property_is_unkown_mapping_should_return_false()
         {
             // Arrange
-            CqlQueryCondition condition = new CqlQueryCondition
+            CmsqlQueryCondition condition = new CmsqlQueryCondition
             {
                 Identifier = "This is some unknown property",
                 Operator = EqualityOperator.GreaterThan,

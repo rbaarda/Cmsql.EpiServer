@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Cmsql.EpiServer.Internal;
-using Cql.Query;
-using Cql.Query.Execution;
+using Cmsql.Query;
+using Cmsql.Query.Execution;
 using EPiServer;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 
 namespace Cmsql.EpiServer
 {
-    public class PageCriteriaQueryRunner : ICqlQueryRunner
+    public class PageCriteriaQueryRunner : ICmsqlQueryRunner
     {
         private readonly IPageCriteriaQueryService _pageCriteriaQueryService;
         private readonly IContentTypeRepository _contentTypeRepository;
@@ -22,17 +22,17 @@ namespace Cmsql.EpiServer
             _contentTypeRepository = contentTypeRepository;
         }
 
-        public CqlQueryExecutionResult ExecuteQueries(IEnumerable<CqlQuery> queries)
+        public CmsqlQueryExecutionResult ExecuteQueries(IEnumerable<CmsqlQuery> queries)
         {
-            List<CqlQueryExecutionError> errors = new List<CqlQueryExecutionError>();
+            List<CmsqlQueryExecutionError> errors = new List<CmsqlQueryExecutionError>();
 
             List<PageData> result = new List<PageData>();
-            foreach (CqlQuery query in queries)
+            foreach (CmsqlQuery query in queries)
             {
                 ContentType contentType = _contentTypeRepository.Load(query.ContentType);
                 if (contentType == null)
                 {
-                    errors.Add(new CqlQueryExecutionError($"Couldn't load content-type '{query.ContentType}'."));
+                    errors.Add(new CmsqlQueryExecutionError($"Couldn't load content-type '{query.ContentType}'."));
                     continue;
                 }
 
@@ -47,7 +47,7 @@ namespace Cmsql.EpiServer
                 PageReference searchStartNodeRef = GetStartSearchFromNode(query.StartNode);
                 if (PageReference.IsNullOrEmpty(searchStartNodeRef))
                 {
-                    errors.Add(new CqlQueryExecutionError($"Couldn't process start node '{query.StartNode}'."));
+                    errors.Add(new CmsqlQueryExecutionError($"Couldn't process start node '{query.StartNode}'."));
                     continue;
                 }
 
@@ -63,21 +63,21 @@ namespace Cmsql.EpiServer
                 }
             }
 
-            IEnumerable<ICqlQueryResult> pageDataCqlQueryResults =
-                result.Select(p => new PageDataCqlQueryResult(p)).ToList();
+            IEnumerable<ICmsqlQueryResult> pageDataCqlQueryResults =
+                result.Select(p => new PageDataCmsqlQueryResult(p)).ToList();
 
-            return new CqlQueryExecutionResult(pageDataCqlQueryResults, errors);
+            return new CmsqlQueryExecutionResult(pageDataCqlQueryResults, errors);
         }
 
-        private PageReference GetStartSearchFromNode(CqlQueryStartNode startNode)
+        private PageReference GetStartSearchFromNode(CmsqlQueryStartNode startNode)
         {
             switch (startNode.StartNodeType)
             {
-                case CqlQueryStartNodeType.Start:
+                case CmsqlQueryStartNodeType.Start:
                     return ContentReference.StartPage;
-                case CqlQueryStartNodeType.Root:
+                case CmsqlQueryStartNodeType.Root:
                     return ContentReference.RootPage;
-                case CqlQueryStartNodeType.Id:
+                case CmsqlQueryStartNodeType.Id:
                     if (int.TryParse(startNode.StartNodeId, out int rootNodeId))
                     {
                         return new PageReference(rootNodeId);
