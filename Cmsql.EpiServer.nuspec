@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 	<summary>CMS Query Language (CMSQL), a DSL for querying tree structured data.</summary>
     <description>This package contains the EPiServer CMSQL specific implementation.</description>
-    <releaseNotes>Initial alpha release (Proof of concept).</releaseNotes>
+    <releaseNotes>Queries without criteria should now return all instances of given content-type.</releaseNotes>
     <copyright>Copyright (c) 2018 Robert Baarda</copyright>
     <tags>cmsql content lexer parser dsl query tree cms episerver</tags>
     <dependencies>
