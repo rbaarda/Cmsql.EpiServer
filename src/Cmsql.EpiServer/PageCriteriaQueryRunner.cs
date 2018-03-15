@@ -25,8 +25,9 @@ namespace Cmsql.EpiServer
         public CmsqlQueryExecutionResult ExecuteQueries(IEnumerable<CmsqlQuery> queries)
         {
             List<CmsqlQueryExecutionError> errors = new List<CmsqlQueryExecutionError>();
-
             List<PageData> result = new List<PageData>();
+
+            CmsqlExpressionParser expressionParser = new CmsqlExpressionParser();
             foreach (CmsqlQuery query in queries)
             {
                 ContentType contentType = _contentTypeRepository.Load(query.ContentType);
@@ -36,7 +37,6 @@ namespace Cmsql.EpiServer
                     continue;
                 }
 
-                CmsqlExpressionParser expressionParser = new CmsqlExpressionParser();
                 CmsqlExpressionVisitorContext visitorContext = expressionParser.Parse(contentType, query.Criteria);
                 if (visitorContext.Errors.Any())
                 {

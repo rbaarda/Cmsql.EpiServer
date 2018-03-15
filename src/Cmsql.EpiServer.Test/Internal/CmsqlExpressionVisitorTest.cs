@@ -24,7 +24,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 Value = "5"
             };
             
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlExpressionVisitor(
@@ -36,7 +36,7 @@ namespace Cmsql.EpiServer.Test.Internal
 
             PropertyCriteriaCollection propertyCriteriaCollection = context.GetCriteria().Single();
 
-            PropertyCriteria propertyCriteria = propertyCriteriaCollection.Single();
+            PropertyCriteria propertyCriteria = propertyCriteriaCollection.Last();
 
             // Assert
             propertyCriteria.Value.ShouldBeEquivalentTo(condition.Value);
@@ -48,7 +48,7 @@ namespace Cmsql.EpiServer.Test.Internal
         public void Test_when_condition_is_null_criteria_should_be_empty()
         {
             // Arrange
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlExpressionVisitor(
@@ -68,7 +68,7 @@ namespace Cmsql.EpiServer.Test.Internal
         public void Test_when_condition_is_null_context_should_contain_error()
         {
             // Arrange
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlExpressionVisitor(
@@ -94,7 +94,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 Value = "5"
             };
 
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlExpressionVisitor(
@@ -120,7 +120,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 Value = "5"
             };
 
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlExpressionVisitor(
@@ -157,7 +157,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 }
             };
 
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlExpressionVisitor(
@@ -194,7 +194,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 }
             };
 
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlExpressionVisitor(
@@ -281,7 +281,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 }
             };
 
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlExpressionVisitor(

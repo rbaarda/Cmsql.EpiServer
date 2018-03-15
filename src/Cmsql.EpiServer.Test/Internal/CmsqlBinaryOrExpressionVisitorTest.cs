@@ -21,7 +21,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 Value = "5"
             };
 
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlBinaryOrExpressionVisitor(
@@ -58,7 +58,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 }
             };
 
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlBinaryOrExpressionVisitor(
@@ -95,7 +95,7 @@ namespace Cmsql.EpiServer.Test.Internal
                 }
             };
 
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(new ContentType());
 
             CmsqlExpressionVisitor cmsqlExpressionVisitor =
                 new CmsqlBinaryOrExpressionVisitor(

@@ -9,10 +9,16 @@ namespace Cmsql.EpiServer.Internal
             ContentType contentType,
             ICmsqlQueryExpression expression)
         {
-            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext();
+            CmsqlExpressionVisitorContext context = new CmsqlExpressionVisitorContext(contentType);
 
-            if (contentType == null || expression == null)
+            if (contentType == null)
             {
+                return context;
+            }
+
+            if (expression == null)
+            {
+                context.PushNewPropertyCriteriaCollection();
                 return context;
             }
             
